@@ -1,13 +1,13 @@
-package com.wave.drools.services;
+package com.mrock.drools.services;
 
 import org.kie.api.runtime.KieContainer;
 import org.kie.api.runtime.KieSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.wave.drools.config.CashbackRulesConfig;
-import com.wave.drools.model.CashBack;
-import com.wave.drools.model.UserRequest;
+import com.mrock.drools.config.CashbackRulesConfig;
+import com.mrock.drools.model.CashBack;
+import com.mrock.drools.model.UserRequest;
 
 @Service
 public class PromotionService {

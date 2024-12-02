@@ -1,4 +1,4 @@
-package com.wave.drools.model;
+package com.mrock.drools.model;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.wave.drools.config;
+package com.mrock.drools.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

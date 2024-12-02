@@ -1,4 +1,4 @@
-package com.wave.drools.controller;
+package com.mrock.drools.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.wave.drools.model.CashBack;
-import com.wave.drools.model.UserRequest;
-import com.wave.drools.services.PromotionService;
+import com.mrock.drools.model.CashBack;
+import com.mrock.drools.model.UserRequest;
+import com.mrock.drools.services.PromotionService;
 
 import lombok.RequiredArgsConstructor;
 

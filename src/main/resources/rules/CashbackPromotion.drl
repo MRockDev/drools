@@ -1,8 +1,8 @@
 package KieRule;
-import com.wave.drools.model.CashBack;
-import com.wave.drools.model.TransactionType;
-import com.wave.drools.model.UserRequest;
-import com.wave.drools.config.CashbackRulesConfig;
+import com.mrock.drools.model.CashBack;
+import com.mrock.drools.model.TransactionType;
+import com.mrock.drools.model.UserRequest;
+import com.mrock.drools.config.CashbackRulesConfig;
 
 global CashBack cashBackObject;
 global CashbackRulesConfig rulesConfig;

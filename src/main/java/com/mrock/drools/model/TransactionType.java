@@ -1,4 +1,4 @@
-package com.wave.drools.model;
+package com.mrock.drools.model;
 
 public enum TransactionType {
 	MONEYTRANSFER, TOPUP, BILLPAYMENT;
