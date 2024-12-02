@@ -1,0 +1,45 @@
+package KieRule;
+import com.wave.drools.model.CashBack;
+import com.wave.drools.model.TransactionType;
+import com.wave.drools.model.UserRequest;
+import com.wave.drools.config.CashbackRulesConfig;
+
+global CashBack cashBackObject;
+global CashbackRulesConfig rulesConfig;
+
+rule "MoneyTransfer Cashback"
+when
+    $userRequest : UserRequest(transactionType == TransactionType.MONEYTRANSFER && 
+                             amount >= rulesConfig.getMoneyTransferMinAmount())
+then
+    cashBackObject.setMsisdn($userRequest.getMsisdn());
+    cashBackObject.setCashBackAmount(rulesConfig.getMoneyTransferCashbackAmount());
+end
+
+rule "TopUp Cashback"
+when
+    $userRequest : UserRequest(transactionType == TransactionType.TOPUP && 
+                             amount >= rulesConfig.getTopUpMinAmount())
+then
+    cashBackObject.setMsisdn($userRequest.getMsisdn());
+    cashBackObject.setCashBackAmount(rulesConfig.getTopUpCashbackAmount());
+end
+
+rule "Bill Payment Cashback"
+when
+    $userRequest : UserRequest(transactionType == TransactionType.BILLPAYMENT && 
+                             amount >= rulesConfig.getBillPaymentMinAmount())
+then
+    cashBackObject.setMsisdn($userRequest.getMsisdn());
+    cashBackObject.setCashBackAmount(rulesConfig.getBillPaymentCashbackAmount());
+end
+
+rule "Multiple transaction type in during interval time"
+when
+    $userRequest : UserRequest(diffTranCount >= rulesConfig.getMultiTransactionMinCount() && 
+                             transactionTime <= rulesConfig.getMultiTransactionMaxHours() && 
+                             amount >= rulesConfig.getMultiTransactionMinAmount())
+then
+    cashBackObject.setMsisdn($userRequest.getMsisdn());
+    cashBackObject.setCashBackAmount(rulesConfig.getMultiTransactionCashbackAmount());
+end
